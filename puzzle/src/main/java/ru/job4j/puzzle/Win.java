@@ -5,17 +5,17 @@ public class Win {
         boolean result = false;
         for (int row = 0; row < board.length; row++) {
             result = checkX(board, row);
-            if (result == true) {
-                break;
+            if (result) {
+                return result;
             }
         }
-        if (result == false) {
+//        if (result == false) {
         for (int col = 0; col < board.length; col++) {
             result = checkY(board, col);
-            if (result == true) {
-                break;
+            if (result) {
+                return result;
                 }
-            }
+//            }
         }
         return result;
     }
