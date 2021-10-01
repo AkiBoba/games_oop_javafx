@@ -9,13 +9,12 @@ public class Win {
                 return result;
             }
         }
-//        if (result == false) {
+
         for (int col = 0; col < board.length; col++) {
             result = checkY(board, col);
             if (result) {
                 return result;
-                }
-//            }
+            }
         }
         return result;
     }
@@ -33,8 +32,8 @@ public class Win {
 
     public static boolean checkY(int[][] board, int column) {
         boolean rslt = true;
-        for (int row = 0; row < board.length; row++) {
-            if (board[row][column] != 1) {
+        for (int[] ints : board) {
+            if (ints[column] != 1) {
                 rslt = false;
                 break;
             }
