@@ -32,8 +32,8 @@ public class Win {
 
     public static boolean checkY(int[][] board, int column) {
         boolean rslt = true;
-        for (int[] ints : board) {
-            if (ints[column] != 1) {
+        for (int row = 0; row < board.length; row++) {
+            if (board[row][column] != 1) {
                 rslt = false;
                 break;
             }
