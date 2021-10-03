@@ -4,7 +4,7 @@ public class Win {
     public static boolean check(int[][] board) {
         boolean result = false;
         for (int index = 0; index < board.length; index++) {
-            if ((checkX(board, index) || checkY(board, index))) {
+            if (board[index][index] == 1 && (checkX(board, index) || checkY(board, index))) {
                 result = true;
                 break;
             }
@@ -14,7 +14,7 @@ public class Win {
 
     public static boolean checkX(int[][] board, int row) {
         boolean rsl = true;
-        for (int col = 0; col < board.length; col++) {
+        for (int col = 0; col < board[row].length; col++) {
             if (board[row][col] != 1) {
                 rsl = false;
                 break;
@@ -25,7 +25,7 @@ public class Win {
 
     public static boolean checkY(int[][] board, int column) {
         boolean rslt = true;
-        for (int row = 0; row < board.length; row++) {
+        for (int row = 0; row < board[column].length; row++) {
             if (board[row][column] != 1) {
                 rslt = false;
                 break;
