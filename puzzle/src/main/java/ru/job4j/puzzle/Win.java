@@ -3,17 +3,10 @@ package ru.job4j.puzzle;
 public class Win {
     public static boolean check(int[][] board) {
         boolean result = false;
-        for (int row = 0; row < board.length; row++) {
-            result = checkX(board, row);
-            if (result) {
-                return result;
-            }
-        }
-
-        for (int col = 0; col < board.length; col++) {
-            result = checkY(board, col);
-            if (result) {
-                return result;
+        for (int index = 0; index < board.length; index++) {
+            if ((checkX(board, index) || checkY(board, index))) {
+                result = true;
+                break;
             }
         }
         return result;
