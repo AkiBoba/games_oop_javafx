@@ -11,3 +11,5 @@ All examples are popular games. (Chess, TicTacToe, SeeBattle and etc)
 ##Chess
 
 ![ScreenShot](images/Chess.png)
+
+# 2. Каркас шахматной доски [#792]
