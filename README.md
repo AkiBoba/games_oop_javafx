@@ -12,4 +12,4 @@ All examples are popular games. (Chess, TicTacToe, SeeBattle and etc)
 
 ![ScreenShot](images/Chess.png)
 
-# 2. Каркас шахматной доски [#792]
+# 2. Каркас шахматной доски [#792] - 
