@@ -5,7 +5,6 @@ import ru.job4j.chess.firuges.Cell;
 import ru.job4j.chess.firuges.Figure;
 
 public class BishopBlack implements Figure {
-
     private final Cell position;
 
     public BishopBlack(final Cell ps) {
@@ -39,12 +38,8 @@ public class BishopBlack implements Figure {
     }
 
     public boolean isDiagonal(Cell source, Cell dest) {
-        boolean res = true;
-        if (Math.abs(dest.getX() - source.getX()) != Math.abs(dest.getY() - source.getY())) {
-            res = false;
-        }
-        return res;
-    }
+        return Math.abs(dest.getX() - source.getX()) == Math.abs(dest.getY() - source.getY());
+            }
 
     @Override
     public Figure copy(Cell dest) {

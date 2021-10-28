@@ -52,7 +52,7 @@ public class LogicTest {
     }
 
     @Test
-    public void noFreeTest() throws FigureNotFoundException, ImpossibleMoveException, OccupiedCellException {
+    public void noFreeTest() throws ImpossibleMoveException {
         Logic logic = new Logic();
         logic.add(new PawnBlack(Cell.A7));
         logic.add(new PawnBlack(Cell.B7));
@@ -72,7 +72,7 @@ public class LogicTest {
         logic.add(new RookBlack(Cell.H8));
         try {
             logic.move(Cell.C8, Cell.A6);
-        } catch (Exception e) {
+        } catch (Exception ignored) {
         }
 
     }
