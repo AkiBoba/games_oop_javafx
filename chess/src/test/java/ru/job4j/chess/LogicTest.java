@@ -12,15 +12,6 @@ import static org.junit.Assert.assertThat;
 
 public class LogicTest {
 
-    @Ignore
-    @Test
-    public void move()
-            throws FigureNotFoundException, OccupiedCellException, ImpossibleMoveException {
-        Logic logic = new Logic();
-        logic.add(new BishopBlack(Cell.C1));
-        logic.move(Cell.C1, Cell.H6);
-    }
-
     @Test
     public void positionTest() {
         Figure blackBisop = new BishopBlack(Cell.F8);
@@ -41,18 +32,14 @@ public class LogicTest {
         assertThat(cells, is(new Cell[] {Cell.B7, Cell.A6}));
     }
 
-    @Test
+    @Test(expected = ImpossibleMoveException.class)
     public void noDiagonalTest() throws ImpossibleMoveException {
         Figure blackBisop = new BishopBlack(Cell.C8);
-        try {
             blackBisop.way(Cell.G3);
-        } catch (ImpossibleMoveException e) {
-            assertEquals("Could not way by diagonal from C8 to G3", e.getMessage());
-        }
     }
 
-    @Test
-    public void noFreeTest() throws ImpossibleMoveException {
+    @Test(expected = Exception.class)
+    public void noFreeTest() throws OccupiedCellException, FigureNotFoundException {
         Logic logic = new Logic();
         logic.add(new PawnBlack(Cell.A7));
         logic.add(new PawnBlack(Cell.B7));
@@ -70,11 +57,6 @@ public class LogicTest {
         logic.add(new BishopBlack(Cell.F8));
         logic.add(new KnightBlack(Cell.G8));
         logic.add(new RookBlack(Cell.H8));
-        try {
-            logic.move(Cell.C8, Cell.A6);
-        } catch (Exception ignored) {
-        }
-
+        logic.move(Cell.C8, Cell.A5);
     }
-
 }
