@@ -37,7 +37,8 @@ public class LogicTest {
     }
 
     @Test(expected = OccupiedCellException.class)
-    public void noFreeTest() throws OccupiedCellException, FigureNotFoundException, ImpossibleMoveException {
+    public void noFreeTest() throws OccupiedCellException,
+            FigureNotFoundException, ImpossibleMoveException {
         Logic logic = new Logic();
         logic.add(new PawnBlack(Cell.A7));
         logic.add(new PawnBlack(Cell.B7));
@@ -59,7 +60,8 @@ public class LogicTest {
     }
 
     @Test(expected = FigureNotFoundException.class)
-    public void noFoundTest() throws OccupiedCellException, FigureNotFoundException, ImpossibleMoveException {
+    public void noFoundTest() throws OccupiedCellException,
+            FigureNotFoundException, ImpossibleMoveException {
         Logic logic = new Logic();
         logic.add(new PawnBlack(Cell.A7));
         logic.add(new PawnBlack(Cell.B7));
@@ -80,7 +82,8 @@ public class LogicTest {
     }
 
     @Test(expected = ImpossibleMoveException.class)
-    public void noMoveTest() throws OccupiedCellException, FigureNotFoundException, ImpossibleMoveException {
+    public void noMoveTest() throws OccupiedCellException,
+            FigureNotFoundException, ImpossibleMoveException {
         Logic logic = new Logic();
         logic.add(new PawnBlack(Cell.A7));
         logic.add(new PawnBlack(Cell.B7));

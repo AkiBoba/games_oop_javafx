@@ -14,4 +14,4 @@ All examples are popular games. (Chess, TicTacToe, SeeBattle and etc)
 
 # 2. Каркас шахматной доски [#792] 
 
-# 2. Каркас шахматной доски 
+# 2. Каркас шахматной доски -
