@@ -12,28 +12,28 @@ public class LogicTest {
 
     @Test
     public void positionTest() {
-        Figure blackBisop = new BishopBlack(Cell.F8);
-        assertThat(blackBisop.position(), is(Cell.F8));
+        Figure blackBishop = new BishopBlack(Cell.F8);
+        assertThat(blackBishop.position(), is(Cell.F8));
     }
 
     @Test
     public void copyTest() {
-        Figure blackBisop = new BishopBlack(Cell.F8);
-        blackBisop = blackBisop.copy(Cell.H3);
-        assertThat(blackBisop.position(), is(Cell.H3));
+        Figure blackBishop = new BishopBlack(Cell.F8);
+        blackBishop = blackBishop.copy(Cell.H3);
+        assertThat(blackBishop.position(), is(Cell.H3));
     }
 
     @Test
     public void wayTest() {
-        Figure blackBisop = new BishopBlack(Cell.C8);
-        Cell[] cells = blackBisop.way(Cell.A6);
+        Figure blackBishop = new BishopBlack(Cell.C8);
+        Cell[] cells = blackBishop.way(Cell.A6);
         assertThat(cells, is(new Cell[] {Cell.B7, Cell.A6}));
     }
 
     @Test(expected = ImpossibleMoveException.class)
     public void noDiagonalTest() throws ImpossibleMoveException {
-        Figure blackBisop = new BishopBlack(Cell.C8);
-            blackBisop.way(Cell.G3);
+        Figure blackBishop = new BishopBlack(Cell.C8);
+            blackBishop.way(Cell.G3);
     }
 
     @Test(expected = OccupiedCellException.class)
